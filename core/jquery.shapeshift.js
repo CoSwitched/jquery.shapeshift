@@ -426,8 +426,8 @@
               selected_tag = $selected.prop("tagName");
               $placeholder = $("<" + selected_tag + " class='" + placeholder_class + "' style='height: " + ($selected.height()) + "px; width: " + ($selected.width()) + "px'></" + selected_tag + ">");
               $selected.parent().addClass(original_container_class).addClass(current_container_class);
-              selected_offset_y = $selected.outerHeight() / 2;
-              return selected_offset_x = $selected.outerWidth() / 2;
+              selected_offset_y = e.offsetY;
+              return selected_offset_x = e.offsetX;
             },
             drag: function(e, ui) {
               if (!drag_timeout && !(drag_clone && delete_clone && $("." + current_container_class)[0] === $("." + original_container_class)[0])) {
